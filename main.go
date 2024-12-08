@@ -35,24 +35,24 @@ func main() {
 func commandsMap() map[string]CliCommand {
 	return map[string]CliCommand{
 		"help": {
-			name:        "help",
-			description: "Displays a help message",
-			callback:    helpCmd,
+			Name:        "help",
+			Description: "Displays a help message",
+			Callback:    helpCmd,
 		},
 		"exit": {
-			name:        "exit",
-			description: "Exits the pokedex",
-			callback:    exitCmd,
+			Name:        "exit",
+			Description: "Exits the pokedex",
+			Callback:    exitCmd,
 		},
 		"map": {
-			name:        "map",
-			description: "Get next page of results",
-			callback:    mapCmd,
+			Name:        "map",
+			Description: "Get next page of results",
+			Callback:    mapCmd,
 		},
 		"mapb": {
-			name:        "mapb",
-			description: "Get previous page of results",
-			callback:    mapbCmd,
+			Name:        "mapb",
+			Description: "Get previous page of results",
+			Callback:    mapbCmd,
 		},
 	}
 }
@@ -63,7 +63,7 @@ func helpCmd(config *Config) error {
 
 	for key := range commandsMap() {
 		obj := commandsMap()[key]
-		fmt.Printf("%s: %s \n", obj.name, obj.description)
+		fmt.Printf("%s: %s \n", obj.Name, obj.Description)
 	}
 	fmt.Print("\nPokedex >")
 
