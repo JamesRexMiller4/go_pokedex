@@ -1,9 +1,9 @@
-package main
+package internal
 
-type cliCommand struct {
-	name        string
-	description string
-	callback    func(config *Config) error
+type CliCommand struct {
+	Name        string
+	Description string
+	Callback    func(config *Config) error
 }
 
 type Location struct {
