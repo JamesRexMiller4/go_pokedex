@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	internal "github.com/jamesrexmiller4/go_pokedex/internal"
+	internal "github.com/jamesrexmiller4/go_pokedex/internal/apis"
 )
 
 func main() {
