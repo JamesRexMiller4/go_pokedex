@@ -2,30 +2,34 @@ package main
 
 import "testing"
 
-func TestCleanInput( t *testing.T) {
-	cases := []struct{
-		input string
+func TestCleanInput(t *testing.T) {
+	cases := []struct {
+		input    string
 		expected []string
-	} {
+	}{
 		{
 			input: "hello world",
-			expected: []string {
+			expected: []string{
 				"hello",
 				"world",
 			},
 		},
 	}
 
-	for _, case := range cases {
-		actual := CleanInput(case.input)
-		if len(actual) != len(case.expected) {
-			t.Errorf("The lengths are not equal: %v vs %v", len(actual), len(case.expected))
+	for _, cs := range cases {
+		actual := CleanInput(cs.input)
+		if len(actual) != len(cs.expected) {
+			t.Errorf("The lengths are not equal: %v vs %v", len(actual), len(cs.expected))
 			continue
 		}
 
 		for i := range actual {
 			actualWord := actual[i]
-			expectedWord := case.expected[i]
+			expectedWord := cs.expected[i]
+
+			if actualWord != expectedWord {
+				t.Errorf("%v does not equal %v", actualWord, expectedWord)
+			}
 		}
 	}
 }
